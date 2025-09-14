@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री श्याम कृपा ट्रस्ट - खाटू धाम</title>
+    <meta name="description" content="श्री श्याम कृपा ट्रस्ट - खाटू धाम के भक्तों के लिए निःशुल्क भोजन, आवास और चिकित्सा सेवा">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-saffron: #FF9933;
+            --light-saffron: #FFCC80;
+            --deep-blue: #1A237E;
+            --gold: #FFD700;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #2C2C2C;
+            --text-dark: #333333;
+            --spiritual-orange: #FFA726;
+            --divine-blue: #3F51B5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 153, 51, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-saffron);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-saffron);
+        }
+
+        .donate-btn {
+            background: linear-gradient(135deg, var(--primary-saffron), var(--spiritual-orange));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 153, 51, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--divine-blue), var(--deep-blue));
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" fill="%23FFD700" opacity="0.1"><polygon points="0,300 1000,300 1000,150 500,0 0,150"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--deep-blue);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--deep-blue);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--light-gray);
+            padding: 4rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-saffron);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-gray);
+            border-radius: 20px;
+        }
+
+        /* Committee Members */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            border-color: var(--primary-saffron);
+            transform: translateY(-5px);
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--deep-blue);
+        }
+
+        .member-role {
+            color: var(--primary-saffron);
+            font-weight: 500;
+        }
+
+        /* Membership Section */
+        .membership {
+            background: linear-gradient(135deg, var(--light-saffron), white);
+        }
+
+        .membership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .membership-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membership-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-saffron), var(--gold));
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-saffron);
+            margin-bottom: 1rem;
+        }
+
+        .benefits {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .benefits li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .benefits li:last-child {
+            border-bottom: none;
+        }
+
+        /* Fundraising Section */
+        .fundraising {
+            background: var(--light-gray);
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .campaign-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .campaign-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .campaign-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--divine-blue), var(--primary-saffron));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .campaign-content {
+            padding: 1.5rem;
+        }
+
+        .campaign-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-saffron), var(--gold));
+            transition: width 0.3s ease;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-saffron), var(--spiritual-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--deep-blue);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--deep-blue);
+            font-weight: bold;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-saffron);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-saffron);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">🕉️ श्री श्याम कृपा ट्रस्ट</a>
+            <nav class="nav-menu">
+                <a href="#about">हमारे बारे में</a>
+                <a href="#membership">सदस्यता</a>
+                <a href="#fundraising">फंडरेज़िंग</a>
+                <a href="#services">सेवाएं</a>
+                <a href="#contact">संपर्क</a>
+            </nav>
+            <a href="#membership" class="donate-btn">दान करें</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>जय श्री श्याम!</h1>
+            <p class="hero-subtitle">श्री श्याम कृपा ट्रस्ट में आपका स्वागत है</p>
+            <p class="hero-description">
+                हमारा ध्येय है – <strong>"भक्ति में शक्ति, सेवा में आनंद।"</strong><br>
+                खाटू धाम के पावन दर्शन के लिए आने वाले हर श्रद्धालु को न सिर्फ श्याम बाबा का आशीर्वाद मिले, 
+                बल्कि उन्हें यात्रा के दौरान कोई कष्ट न हो। सिर्फ ₹251 के पावन योगदान से आप इस ट्रस्ट के 
+                आजीवन सदस्य बन सकते हैं।
+            </p>
+            <div class="cta-buttons">
+                <a href="#membership" class="btn-primary">अभी दान करें</a>
+                <a href="#membership" class="btn-secondary">सदस्य बनें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card fade-in-up">
+                <div class="stat-number">10,000+</div>
+                <div class="stat-label">निःशुल्क भोजन प्रसाद वितरित</div>
+            </div>
+            <div class="stat-card fade-in-up">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">भक्तों को रात्रि विश्राम सुविधा</div>
+            </div>
+            <div class="stat-card fade-in-up">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">रोगियों को चिकित्सा सेवा</div>
+            </div>
+            <div class="stat-card fade-in-up">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">प्रमुख हस्तियाँ जुड़ी हैं</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">हमारे बारे में</h2>
+            <p class="section-subtitle">"सेवा ही सच्ची पूजा है।"</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>श्री श्याम कृपा ट्रस्ट की स्थापना इस भावना के साथ हुई कि <strong>श्याम बाबा के हर भक्त को सम्मान, सहारा और सुविधा</strong> मिले।</p>
+                    <br>
+                    <p>हमारे शिविर खाटू धाम आने वाले श्रद्धालुओं के लिए निःशुल्क भोजन, आवास और चिकित्सा की व्यवस्था करते हैं।</p>
+                    <br>
+                    <p><strong>हमारे सिद्धांत:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li><strong>भोजन</strong> सिर्फ भूख मिटाने का साधन नहीं, बल्कि प्रसाद है।</li>
+                        <li><strong>आवास</strong> सिर्फ रुकने की जगह नहीं, बल्कि सेवा स्थल है।</li>
+                        <li><strong>चिकित्सा</strong> सिर्फ इलाज नहीं, बल्कि मानवता की रक्षा है।</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div style="font-size: 8rem; color: var(--primary-saffron);">🕉️</div>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--deep-blue);">श्री श्याम बाबा का आशीर्वाद</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; font-size: 2rem; margin: 3rem 0 2rem; color: var(--deep-blue);">मुख्य समिति सदस्य</h3>
+            <div class="committee-grid">
+                <div class="member-card">
+                    <div class="member-name">Vikash Agarwal</div>
+                    <div class="member-role">अध्यक्ष</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Aniket Agarwal</div>
+                    <div class="member-role">उपाध्यक्ष</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Shravan Agarwal</div>
+                    <div class="member-role">कोषाध्यक्ष</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Sushil Agarwal</div>
+                    <div class="member-role">सचिव</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Manoj Agarwal</div>
+                    <div class="member-role">सदस्य</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Vikash Goyal</div>
+                    <div class="member-role">सदस्य</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Umesh Agarwal</div>
+                    <div class="member-role">सदस्य</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Pankaj Saharia</div>
+                    <div class="member-role">सदस्य</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-name">Suraj Kamdar</div>
+                    <div class="member-role">सदस्य</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="section membership">
+        <div class="container">
+            <h2 class="section-title">सदस्यता और दान</h2>
+            <p class="section-subtitle">"सेवा से बड़ा कोई धन नहीं।"</p>
+            
+            <div class="membership-cards">
+                <div class="membership-card">
+                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">आजीवन सदस्यता</h3>
+                    <div class="price">₹251</div>
+                    <p style="margin-bottom: 2rem;">एक बार का योगदान</p>
+                    <ul class="benefits">
+                        <li>🏛️ ट्रस्ट की गतिविधियों में भागीदारी</li>
+                        <li>🚨 आपातकाल में फंडरेज़िंग सुविधा</li>
+                        <li>⭐ सेवा शिविरों में प्राथमिकता</li>
+                        <li>📜 डिजिटल सदस्यता प्रमाणपत्र</li>
+                        <li>📋 सदस्य सूची में नाम दर्ज</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;" onclick="donate(251)">सदस्य बनें</button>
+                </div>
+                
+                <div class="membership-card">
+                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">मासिक दान</h3>
+                    <div class="price">₹501</div>
+                    <p style="margin-bottom: 2rem;">प्रति माह</p>
+                    <ul class="benefits">
+                        <li>🍽️ भोजन प्रसाद में योगदान</li>
+                        <li>🏠 कैंप व्यवस्था में सहयोग</li>
+                        <li>⚕️ चिकित्सा सेवा में योगदान</li>
+                        <li>📧 मासिक गतिविधि रिपोर्ट</li>
+                        <li>🙏 विशेष आशीर्वाद</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;" onclick="donate(501)">मासिक दान करें</button>
+                </div>
+                
+                <div class="membership-card">
+                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">वार्षिक दान</h3>
+                    <div class="price">₹1100</div>
+                    <p style="margin-bottom: 2rem;">प्रति वर्ष</p>
+                    <ul class="benefits">
+                        <li>🎯 सभी सदस्यता लाभ</li>
+                        <li>📊 वार्षिक गतिविधि रिपोर्ट</li>
+                        <li>🏆 विशेष सम्मान पत्र</li>
+                        <li>📸 कैंप गैलरी में नाम</li>
+                        <li>🔔 प्राथमिकता सूचनाएं</li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;"
