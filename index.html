@@ -649,7 +649,10 @@
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <a href="#" class="logo">🕉️ श्री श्याम कृपा ट्रस्ट</a>
+           <a href="#" class="logo">
+                <img src="shyamji.png" alt="Shree Shyam Kripa Trust" style="height:50px; vertical-align:middle;">
+                श्री श्याम कृपा ट्रस्ट
+            </a>
             <nav class="nav-menu">
                 <a href="#about">हमारे बारे में</a>
                 <a href="#membership">सदस्यता</a>
@@ -721,7 +724,10 @@
                     </ul>
                 </div>
                 <div class="about-image">
-                    <div style="font-size: 8rem; color: var(--primary-saffron);">🕉️</div>
+                    <div class="about-image">
+                    <img src="shyamji.png" alt="Shree Shyam Baba" style="max-width:100%; height:200px;">
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--deep-blue);">श्री श्याम बाबा का आशीर्वाद</p>
+                    </div>
                     <p style="margin-top: 1rem; font-weight: 600; color: var(--deep-blue);">श्री श्याम बाबा का आशीर्वाद</p>
                 </div>
             </div>
@@ -768,50 +774,119 @@
         </div>
     </section>
 
-    <!-- Membership Section -->
-    <section id="membership" class="section membership">
+    <!-- Fundraising Section -->
+    <section id="fundraising" class="section fundraising">
         <div class="container">
-            <h2 class="section-title">सदस्यता और दान</h2>
-            <p class="section-subtitle">"सेवा से बड़ा कोई धन नहीं।"</p>
-            
-            <div class="membership-cards">
-                <div class="membership-card">
-                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">आजीवन सदस्यता</h3>
-                    <div class="price">₹251</div>
-                    <p style="margin-bottom: 2rem;">एक बार का योगदान</p>
-                    <ul class="benefits">
-                        <li>🏛️ ट्रस्ट की गतिविधियों में भागीदारी</li>
-                        <li>🚨 आपातकाल में फंडरेज़िंग सुविधा</li>
-                        <li>⭐ सेवा शिविरों में प्राथमिकता</li>
-                        <li>📜 डिजिटल सदस्यता प्रमाणपत्र</li>
-                        <li>📋 सदस्य सूची में नाम दर्ज</li>
-                    </ul>
-                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;" onclick="donate(251)">सदस्य बनें</button>
+            <h2 class="section-title">फंडरेज़िंग</h2>
+            <p class="section-subtitle">"जब भक्त कठिनाई में हो, तो भक्त परिवार सहारा बनता है।"</p>
+            <p>हमारा ट्रस्ट प्रत्येक सदस्य को मेडिकल आपातकाल में सहायता प्रदान करता है।</p>
+            <p><strong>फंडरेज़िंग कैसे काम करेगा:</strong></p>
+            <ul style="margin-left:2rem;">
+                <li>ट्रस्ट का सदस्य सीधे वेबसाइट पर अभियान बना सकता है।</li>
+                <li>अभियान की समीक्षा ट्रस्ट टीम करेगी।</li>
+                <li>अभियान वेबसाइट पर प्रकाशित होगा।</li>
+                <li>अन्य भक्त दान कर सकेंगे।</li>
+            </ul>
+            <p>🙏 इस प्रकार श्याम बाबा के आशीर्वाद से हर जरूरतमंद को समय पर सहारा मिलेगा।</p>
+
+            <div class="campaign-grid">
+                <div class="campaign-card">
+                    <div class="campaign-image">दिल की सर्जरी हेतु सहायता</div>
+                    <div class="campaign-content">
+                        <div class="campaign-title">25% पूरा</div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:25%;"></div></div>
+                    </div>
                 </div>
-                
-                <div class="membership-card">
-                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">मासिक दान</h3>
-                    <div class="price">₹501</div>
-                    <p style="margin-bottom: 2rem;">प्रति माह</p>
-                    <ul class="benefits">
-                        <li>🍽️ भोजन प्रसाद में योगदान</li>
-                        <li>🏠 कैंप व्यवस्था में सहयोग</li>
-                        <li>⚕️ चिकित्सा सेवा में योगदान</li>
-                        <li>📧 मासिक गतिविधि रिपोर्ट</li>
-                        <li>🙏 विशेष आशीर्वाद</li>
-                    </ul>
-                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;" onclick="donate(501)">मासिक दान करें</button>
+                <div class="campaign-card">
+                    <div class="campaign-image">गुर्दा प्रत्यारोपण हेतु सहयोग</div>
+                    <div class="campaign-content">
+                        <div class="campaign-title">60% पूरा</div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:60%;"></div></div>
+                    </div>
                 </div>
-                
-                <div class="membership-card">
-                    <h3 style="color: var(--deep-blue); margin-bottom: 1rem;">वार्षिक दान</h3>
-                    <div class="price">₹1100</div>
-                    <p style="margin-bottom: 2rem;">प्रति वर्ष</p>
-                    <ul class="benefits">
-                        <li>🎯 सभी सदस्यता लाभ</li>
-                        <li>📊 वार्षिक गतिविधि रिपोर्ट</li>
-                        <li>🏆 विशेष सम्मान पत्र</li>
-                        <li>📸 कैंप गैलरी में नाम</li>
-                        <li>🔔 प्राथमिकता सूचनाएं</li>
-                    </ul>
-                    <button class="btn-primary" style="width: 100%; margin-top: 2rem;"
+            </div>
+        </div>
+    </section>
+
+    <!-- Prominent Personalities -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">प्रमुख हस्तियाँ</h2>
+            <p class="section-subtitle">हम 100+ प्रमुख हस्तियों को जोड़ रहे हैं – समाजसेवी, उद्योगपति, कलाकार, और धर्मनिष्ठ लोग।</p>
+            <p style="text-align:center;">👉 जल्द ही सूची प्रकाशित की जाएगी।</p>
+        </div>
+    </section>
+
+    <!-- Camp Services -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">सेवाएं</h2>
+            <p class="section-subtitle">खाटू धाम की यात्रा में भक्तों की सेवा हेतु हमारे शिविर समर्पित हैं।</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <div class="service-title">आवास</div>
+                    <p>स्वच्छ डॉरमिटरी, परिवार हेतु कमरे, निःशुल्क शौचालय एवं स्नान सुविधा</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <div class="service-title">भोजन प्रसाद</div>
+                    <p>सुबह नाश्ता, दोपहर का भोजन, शाम को प्रसाद वितरण, विशेष अवसरों पर भंडारा</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚕️</div>
+                    <div class="service-title">चिकित्सा सेवा</div>
+                    <p>निःशुल्क डॉक्टर परामर्श, प्राथमिक उपचार, 24×7 एम्बुलेंस, आपातकालीन रेफ़रल सहयोग</p>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:2rem;">🙏 हमारा विश्वास है – “भोजन और सेवा ही सच्ची पूजा है।”</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title" style="color:white;">संपर्क करें</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item"><div class="contact-icon">📧</div> info@shreeshyamkripatrust.org</div>
+                    <div class="contact-item"><div class="contact-icon">📞</div> +91-XXXXXXXXXX</div>
+                    <div class="contact-item"><div class="contact-icon">📍</div> श्री श्याम कृपा ट्रस्ट कार्यालय, खाटू धाम, राजस्थान</div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group"><label>नाम</label><input type="text" placeholder="अपना नाम लिखें"></div>
+                    <div class="form-group"><label>ईमेल</label><input type="email" placeholder="आपका ईमेल"></div>
+                    <div class="form-group"><label>विषय</label><input type="text" placeholder="विषय"></div>
+                    <div class="form-group"><label>संदेश</label><textarea rows="4" placeholder="अपना संदेश लिखें"></textarea></div>
+                    <button type="submit" class="btn-primary" style="width:100%;">संदेश भेजें</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>त्वरित लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="#">होम</a></li>
+                    <li><a href="#about">हमारे बारे में</a></li>
+                    <li><a href="#fundraising">दान करें</a></li>
+                    <li><a href="#membership">सदस्यता</a></li>
+                    <li><a href="#contact">संपर्क</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>सोशल मीडिया</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">F</a>
+                    <a href="#" class="social-link">I</a>
+                    <a href="#" class="social-link">Y</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">कॉपीराइट © 2025 श्री श्याम कृपा ट्रस्ट. सर्वाधिकार सुरक्षित।</div>
+    </footer>
+</body>
+</html>
